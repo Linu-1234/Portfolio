@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priyambada Acharya | Data Analyst</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f8ff;
+      color: #1f1f1f;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to right, #2d3250, #445069);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #d1d5ff;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .nav-links li a:hover {
+      background-color: #89c4f4;
+      color: #ffffff;
+    }
+
+    .home-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 8%;
+      min-height: 80vh;
+    }
+
+    .home-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .left {
+      max-width: 45%;
+    }
+
+    .left h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #2d3250;
+    }
+
+    .left h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2d3250;
+    }
+
+    .quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #444;
+      margin: 1rem 0;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .social-links a img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a img:hover {
+      transform: scale(1.2);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: #2d3250;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00bcd4;
+    }
+
+    .right {
+      max-width: 50%;
+    }
+
+    .animated-img {
+      width: 100%;
+      max-width: 600px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .education-section,
+    .skills-section {
+      padding: 4rem 8%;
+      background-color: #f5f8ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .edu-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2d3250;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .edu-heading::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #445069;
+      margin: 12px auto 0;
+      border-radius: 2px;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    .edu-container {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .edu-img {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .edu-content-area {
+      flex: 1;
+      text-align: left;
+      position: relative;
+    }
+
+    .edu-entry {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      padding-left: 30px;
+    }
+
+    .edu-entry:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 12px;
+      height: 100%;
+      width: 2px;
+      background-color: #ccc;
+      z-index: 0;
+    }
+
+    .edu-dot {
+      width: 14px;
+      height: 14px;
+      background-color: #445069;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 10px;
+      z-index: 1;
+    }
+
+    .edu-info {
+      margin-left: 20px;
+    }
+
+    .edu-info h3 {
+      margin: 0;
+      font-weight: 700;
+      color: #2d3250;
+    }
+
+    .edu-info p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .skills-card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.07);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid #e6e9f0;
+      transition: all 0.3s ease;
+    }
+
+    .skills-card:hover {
+      transform: translateY(-6px);
+      box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills-card h3 {
+      color: #2d3250;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      position: relative;
+      top: -8px;
+    }
+
+    .skill-icons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .skill-icons div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .skill-icons img {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 0.3rem;
+    }
+
+.projects-section {
+  padding: 4rem 8%;
+  text-align: center;
+  background-color: #f5f8ff;
+}
+
+.edu-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3250;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.edu-heading::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #445069;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.projects-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  max-width: 400px;
+  flex: 1;
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #2d3250;
+}
+
+.project-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+
+.project-card p {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.project-tools {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tools span {
+  background: #445069;
+  color: white;
+  padding: 0.3rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.project-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #2d3250;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #00bcd4;
+}
+
+.certification-section {
+  padding: 4rem 8%;
+  background-color: #f5f8ff;
+  text-align: center;
+}
+
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cert-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+}
+
+.cert-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.cert-card h3 {
+  font-size: 1.1rem;
+  color: #2d3250;
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.cert-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  text-align: center;
+
+}
+
+.contact-section {
+  padding: 4rem 8%;
+  background-color: #f5f8ff;
+  text-align: center;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-left {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-img {
+  width: 300px;
+  max-width: 100%;
+  margin-bottom: 0.6rem; /* Reduced gap */
+}
+
+.contact-quote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+  margin: 0; /* Remove extra spacing */
+}
+
+.contact-right {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.mail-link {
+  display: flex;
+  justify-content: center; /* Center align */
+  margin-top: 1rem;
+}
+
+.mail-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.mail-icon:hover {
+  transform: scale(1.2);
+}
+
+.footer {
+  background: #2d3250;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper {
+  flex: 1;
+}
+
+.footer {
+  background: #2d3250;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .home-section, .edu-container, .contact-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5%;
+    text-align: center;
+  }
+
+  .home-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .left, .right,
+  .edu-img, .edu-content-area,
+  .contact-left, .contact-right {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .project-card {
+    max-width: 90%;
+  }
+
+  .certification-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #2d3250;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 1000;
+  }
+
+  .nav-links li {
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+
+  
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/portfolio.png" alt="Logo Icon">
+        <span style="color: #fefefe; font-size: 1.4rem; margin-left: 0.5rem; font-family: 'Poppins', sans-serif; font-weight: 600;">Portfolio</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certification">Certification</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <section id="home" class="home-section" data-aos="fade-up">
+  <div class="home-content">
+    
+    <!-- LEFT Content -->
+    <div class="left">
+      <h1>Hi, I'm Priyambada Acharya</h1>
+      <h3>Data Enthusiast</h3>
+
+      <p class="quote">“Turning raw data into powerful insights.”</p>
+
+      <div class="social-links">
+        <a href="https://github.com/Linu-1234" target="_blank"><img src="images/github.png" alt="GitHub" /></a>
+        <a href="https://www.linkedin.com/in/priyambada-acharya-0b8a38269/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+      </div>
+
+      <div style="margin: 1rem 0;">
+        <a href="https://drive.google.com/file/d/1oqEF2fC1-HJFe6rDbMpkasBqSfKADH-P/view?usp=drive_link" class="btn" target="_blank">Download Resume</a>
+        <a href="#contact" class="btn" style="margin-left: 1rem;">Let's Connect</a>
+      </div>
+
+      <!-- Stats Section -->
+      <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+        <div style="text-align: center;">
+          <h3 style="margin: 0; color: #2d3250; font-size: 1.8rem;">15+</h3>
+          <p style="margin: 0; color: #555;">Certifications</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 style="margin: 0; color: #2d3250; font-size: 1.8rem;">6</h3>
+          <p style="margin: 0; color: #555;">Projects</p>
+        </div>
+        <div style="text-align: center;">
+          <h3 style="margin: 0; color: #2d3250; font-size: 1.8rem;">10+</h3>
+          <p style="margin: 0; color: #555;">Tools Mastered</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT Image -->
+    <div class="right">
+      <img src="images/Home.png" alt="Data Analytics Illustration" class="animated-img" />
+    </div>
+
+  </div>
+</section>
+
+
+ <section id="education" class="education-section" data-aos="fade-up">
+    <div class="edu-heading">Education</div>
+    <div class="edu-container">
+      <img src="images/education.png" alt="Education Image" class="edu-img">
+      <div class="edu-content-area">
+        <div class="edu-entry">
+          <div class="edu-dot"></div>
+          <div class="edu-info">
+            <h3>Veer Surendra Sai University of Technology, Burla</h3>
+            <p>Bachelor of Technology (CSE), CGPA: 8.14</p>
+          </div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-dot"></div>
+          <div class="edu-info">
+            <h3>BJB Higher Secondary School, Bhubaneswar</h3>
+            <p>Intermediate in PCMB, Percentage: 91.67%</p>
+          </div>
+        </div>
+        <div class="edu-entry">
+          <div class="edu-dot"></div>
+          <div class="edu-info">
+            <h3>SM Girls High School, Bhubaneswar</h3>
+            <p>Matriculation, Percentage: 92.33%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section" data-aos="fade-up">
+    <div class="edu-heading">Skills</div>
+    <div class="skills-grid">
+      <div class="skills-card">
+        <h3>Languages</h3>
+        <div class="skill-icons">
+          <div><img src="images/python.png" alt="Python"/>Python</div>
+          <div><img src="images/SQL.jpg" alt="SQL"/>SQL</div>
+          <div><img src="images/CPP.jpg" alt="C++"/>C++</div>
+          <div><img src="images/C.jpg" alt="C"/>C</div>
+        </div>
+      </div>
+      <div class="skills-card">
+        <h3>Frameworks</h3>
+        <div class="skill-icons">
+          <div><img src="images/pandas.png" alt="Pandas"/>Pandas</div>
+          <div><img src="images/Numpy.png" alt="NumPy"/>NumPy</div>
+          <div><img src="images/sklearn.jpg" alt="Scikit-learn"/>Scikit-learn</div>
+          <div><img src="images/Matplotlib.png" alt="Matplotlib"/>Matplotlib</div>
+          <div><img src="images/Seaborn.png" alt="Seaborn"/>Seaborn</div>
+        </div>
+      </div>
+      <div class="skills-card">
+        <h3>Tools</h3>
+        <div class="skill-icons">
+          <div><img src="images/PowerBI.jpg" alt="Power BI"/>Power BI</div>
+          <div><img src="images/excel.jpg" alt="Excel"/>Excel</div>
+          <div><img src="images/powerpoint.jpg" alt="PowerPoint"/>PowerPoint</div>
+          <div><img src="images/Tableau.png" alt="Tableau"/>Tableau</div>
+          <div><img src="images/mySQL.jpg" alt="MySQL"/>MySQL</div>
+        </div>
+      </div>
+      <div class="skills-card">
+        <h3>Platforms</h3>
+        <div class="skill-icons">
+          <div><img src="images/Pycharm.jpg" alt="PyCharm"/>PyCharm</div>
+          <div><img src="images/jupyter notebook.jpg" alt="Jupyter"/>Jupyter</div>
+          <div><img src="images/VSCode.jpg" alt="VS Code"/>VS Code</div>
+          <div><img src="images/Github.png" alt="GitHub"/>GitHub</div>
+          <div><img src="images/Canva.jpg" alt="Canva"/>Canva</div>
+        </div>
+      </div>
+      <div class="skills-card" style="grid-column: span 2;">
+        <h3>Soft Skills</h3>
+        <div class="skill-icons">
+          <div><img src="images/Problem Solving.jpg" alt="Problem Solving"/>Problem Solving</div>
+          <div><img src="images/Data Storytelling.jpg" alt="Data Storytelling"/>Data Storytelling</div>
+          <div><img src="images/Critical thinking.jpg" alt="Critical Thinking"/>Critical Thinking</div>
+          <div><img src="images/Adaptibilty.jpg" alt="Adaptability"/>Adaptability</div>
+          <div><img src="images/Time management.jpg" alt="Time Management"/>Time Management</div>
+          <div><img src="images/Communication.jpg" alt="Communication"/>Communication</div>
+          <div><img src="images/Team work.jpg" alt="Teamwork"/>Teamwork</div>
+        </div>
+      </div>
+    </div>
+ <section id="projects" class="projects-section" data-aos="fade-up">
+  <div class="edu-heading">Projects</div>
+
+  <!-- Subsection 1 -->
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <h3>Employee Retention Analysis</h3>
+      <img src="images/employee retention prediction.png" alt="Employee Retention" class="project-thumb">
+      <p>Built and deployed a logistic regression model using Python to predict employee attrition, with interactive visualization and real-time prediction via Streamlit.</p>
+      <div class="project-tools">
+        <span>Python</span>
+        <span>Pandas</span>
+        <span>Logistic Regression</span>
+        <span>Streamlit</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/employee-retention-app" target="_blank">GitHub</a>
+        <a href="https://linu-1234-employee-retention-app-app-plsrlw.streamlit.app/" target="_blank">Live Demo</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <h3>Sales Performance Dashboard</h3>
+      <img src="images/Sales Performace Dashboard.png" alt="Sales Dashboard" class="project-thumb">
+      <p>Developed a dynamic Power BI dashboard to analyze pizza sales performance using SQL, DAX, and Power Query, delivering actionable insights in the sales domain.</p>
+      <div class="project-tools">
+        <span>SQL</span>
+        <span>Power BI</span>
+        <span>DAX</span>
+        <span>Power Query</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/Sales-Performance-Dashboard" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subsection 2 -->
+  <div class="projects-grid">
+    <!-- Project 3 -->
+    <div class="project-card">
+      <h3>Bank Loan Analysis</h3>
+      <img src="images/Bank Loan Analysis.png" alt="Loan Analytics" class="project-thumb">
+      <p>Analyzed 38K+ loan applications using SQL and Excel to build interactive dashboards, segment loan risk, and generate actionable financial insights.</p>
+      <div class="project-tools">
+        <span>SQL</span>
+        <span>Excel</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/Bank-Loan-Analysis" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <h3>HR Analytics</h3>
+      <img src="images/HR Analytics.png" alt="HR Analytics" class="project-thumb">
+      <p>An HR analytics dashboard built with Power BI to analyze employee attendance data, working preferences, and sick leave trends over three months.</p>
+      <div class="project-tools">
+        <span>PowerBI</span>
+        <span>DAX</span>
+        <span>Power Query</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/HR-Data-Analysis-Power-BI" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subsection 3 -->
+  <div class="projects-grid">
+    <!-- Project 5 -->
+    <div class="project-card">
+      <h3>Road Accident Analysis</h3>
+      <img src="images/Road Accident Analysis.png" alt="Road Accident" class="project-thumb">
+      <p>Analyzed 2021–2022 road accident data in Excel and built an interactive dashboard to uncover trends and enhance road safety decisions.</p>
+      <div class="project-tools">
+        <span>Excel</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/Road-Accident-Analysis-and-Interactive-Dashboard-EXCEL" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card">
+      <h3>Pizza Sales Analysis</h3>
+      <img src="images/Pizza Sales Analysis.png" alt="Pizza Sales Analysis" class="project-thumb">
+      <p>Analyzed pizza sales data using SQL to uncover revenue drivers, popular items, and order trends for better sales and inventory decisions.</p>
+      <div class="project-tools">
+        <span>SQL</span>
+        <span>Canva</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Linu-1234/Pizza-Sales-Analysis-SQL" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>    
+</section>
+
+<section id="certification" class="certification-section" data-aos="fade-up">
+  <div class="edu-heading">Certifications</div>
+  <div class="certification-grid">
+
+
+    <div class="cert-card">
+      <a href="https://www.credly.com/earner/earned/badge/a7a2118e-74b2-4e2c-8760-4b841dae568b" target="_blank">
+        <img src="images/Data Analytics essential.png" alt="Data Analytics Essential" class="cert-image">
+      </a>
+      <h3>Data Analytics Essential</h3>
+      <p>Issued by Cisco</p>
+    </div> 
+
+    <div class="cert-card">
+      <a href="https://www.udemy.com/certificate/UC-31954692-be67-4de1-8f7f-4234e0fe67c5/" target="_blank">
+        <img src="images/Python for Data Science and Machine Learning A-Z.png" alt="Python- Introduction to for Data Science and Machine Learning A-Z" class="cert-image">
+      </a>
+      <h3>Python- Introduction to for Data Science and Machine Learning A-Z</h3>
+      <p>Issued by Udemy</p>
+    </div>
+
+
+    <div class="cert-card">
+      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_mcYJM6YCbypzu5zZJ_1750156279666_completion_certificate.pdf" target="_blank">
+        <img src="images/Deloitee Job Simulation.png" alt="Data Analytics Job Simulation" class="cert-image">
+      </a>
+      <h3>Data Analytics Job Simulation</h3>
+      <p>Issued by Forage</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_mcYJM6YCbypzu5zZJ_1750157503044_completion_certificate.pdf" target="_blank">
+        <img src="images/Tata Job Simulation.png" alt="TATA Job Simulation" class="cert-image">
+      </a>
+      <h3>TATA Job Simulation</h3>
+      <p>Issued by UC Forage</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.credly.com/earner/earned/badge/60797a6c-85f2-4f86-b301-8461d00a93b0" target="_blank">
+        <img src="images/Data Fundamentals.png" alt="Data Fundamentals" class="cert-image">
+      </a>
+      <h3>Data Fundamentals</h3>
+      <p>Issued by IBM</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.credly.com/earner/earned/badge/f5ab3c1e-2091-4fdc-b240-ad0c7528da79" target="_blank">
+        <img src="images/Getting Started With Data.png" alt="Getting Started With Data" class="cert-image">
+      </a>
+      <h3>Getting Started With Data</h3>
+      <p>Issued by IBM</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.credly.com/earner/earned/badge/70bff922-984f-445e-a939-1291c44b5eac" target="_blank">
+        <img src="images/Explore Emerging Tech.png" alt="Explore Emerging Tech" class="cert-image">
+      </a>
+      <h3>Explore Emerging Tech</h3>
+      <p>Issued by IBM</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.credly.com/earner/earned/badge/56c12c19-bce7-4665-8056-d6968d81b143" target="_blank">
+        <img src="images/Project Management Fundamentals.png" alt="Project Management Fundamentals" class="cert-image">
+      </a>
+      <h3>Project Management Fundamentals</h3>
+      <p>Issued by IBM</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/F7VTQU2NQVTN" target="_blank">
+        <img src="images/Conducting Exploratory Data Analysis.png" alt="Conducting Exploratory Data Analysis" class="cert-image">
+      </a>
+      <h3>Conducting Exploratory Data Analysis</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/U4LT6DOIEMAM" target="_blank">
+        <img src="images/Creates Charts and Dashboards Using Microsoft Excel.png" alt="Create Charts and Dashboards Using Microsoft Excel" class="cert-image">
+      </a>
+      <h3>Create Charts and Dashboards Using Microsoft Excel</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/CG1COAPKSTG0" target="_blank">
+        <img src="images/Data Analysis using SQL.png" alt="Data Analysis using SQL" class="cert-image">
+      </a>
+      <h3>Data Analysis using SQL</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/ZYT6IAMJVKT5?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">
+        <img src="images/Preparing Data for Analysis using Microsoft Excel.png" alt="Preparing Data for Analysis using Microsoft Excel" class="cert-image">
+      </a>
+      <h3>Preparing Data for Analysis using Microsoft Excel</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+     <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/6W23PDRKRFFE" target="_blank">
+        <img src="images/Python for Data Visualization.png" alt="Python for Data Visualization : Matplotlib & Seaborn" class="cert-image">
+      </a>
+      <h3>Python for Data Visualization : Matplotlib & Seaborn</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+     <div class="cert-card">
+      <a href="https://www.coursera.org/account/accomplishments/verify/FZD9N4643G0O" target="_blank">
+        <img src="images/Python for Data Analysis .png" alt="Python for Data Analysis : Pandas & Numpy" class="cert-image">
+      </a>
+      <h3>Python for Data Analysis : Pandas & Numpy</h3>
+      <p>Issued by Coursera</p>
+    </div>
+
+    <div class="cert-card">
+      <a href="https://www.kaggle.com/learn/certification/priyambada78/python" target="_blank">
+        <img src="images/python from kaggle.png" alt="Python" class="cert-image">
+      </a>
+      <h3>Python</h3>
+      <p>Issued by Kaggle</p>
+    </div>
+
+  
+  </div>
+</section>
+
+<section id="contact" class="contact-section" data-aos="fade-up">
+  <div class="edu-heading">Contact</div>
+  <div class="contact-container">
+    <!-- Left: Image and Quote -->
+    <div class="contact-left">
+      <img src="images/Contact-removebg-preview (1).png" alt="Contact Illustration" class="contact-img">
+      <p class="contact-quote">“Let’s connect and collaborate to create insights that matter.”</p>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="contact-right">
+      <form action="https://formspree.io/f/mzzgvnnb" method="POST" class="contact-form">
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+  <!-- Hidden redirect link -->
+  <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html" />
+
+  <button type="submit" class="btn">Send Message</button>
+</form>
+
+
+      <!-- Email Icon Link -->
+      <a href="mailto:priyambadaacharya1@gmail.com" target="_blank" class="mail-link">
+        <img src="images/email.jpg" alt="Email Icon" class="mail-icon" />
+      </a>
+    </div>
+  </div>
+</section>
+</div>
+<footer class="footer">
+    <p>&copy; 2025 Priyambada Acharya. All rights reserved.</p>
+  </footer>
+  <!-- AOS Script -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+  duration: 1000,
+  offset: 100,
+  once: false   // 👈 set this to false to allow repeated animation
+});
+</script>
+
+</body>
+</html>
